@@ -1,0 +1,23 @@
+  name: test2Node
+
+  on: [push, pull_request]
+
+  jobs: 
+    build: 
+      runs-on: ubuntu-latest
+
+      steps: 
+        - name: checkout project
+          uses: actions/checkout@v2
+        
+        - name: set up node version
+          uses: actions/setup-node@v2
+          with: 
+            node-version: '14'
+        
+        - name: install dependencies
+          run: npm install 
+        
+        - name: run unit test with mocha
+          run: npm test
+          working-directory: ./
