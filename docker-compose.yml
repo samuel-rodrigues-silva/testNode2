@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: admin
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    expose:
+     -  "5432"
+    ports:
+      - "5432:5432"
+    volumes: 
+      - ./db:/docker-entrypoint-initdb.d/
+
+# docker ps
+# docker container stop id
+# docker container rm id
+# docker-compose up -d
+
