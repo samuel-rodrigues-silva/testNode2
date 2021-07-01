@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT;
-const router = require('./routes/index.js')
+const router = require('./routes/billsRouter.js')
 app.use(express.json());
-app.use('/test2', router);
-app.listen(PORT || 8080, () => {
+app.use('/api/v1/bills', router);
+app.listen(8080 || PORT, () => {
     console.log(`RUNNING ON PORT ${PORT}`)
 })
 

@@ -1,18 +1,14 @@
 const { STRING } = require("sequelize/types")
 
 module.exports = (sequelize, DataType) => {
-    const Customer = sequelize.define('customer', {
-        id: {
-            type: DataType.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        },
-        cpf: DataType.STRING,
-        nome: DataType.STRING,
-        email: DataType.STRING
+    const Bills = sequelize.define('Bills', {
+        amount: DataType.LONG,
+        product: DataType.STRING,
+        paymentMethod: DataType.STRING,
+        customer: DataType.STRING
     }, {
         freezeTableName: true,
         timestamps: true
     })
-    return Customer
+    return Bills
 }
