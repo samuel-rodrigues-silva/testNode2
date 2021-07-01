@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const billsController = require('../controller/billsController');
 
-router.get('/', billsController.fetchAll);
+router.get('/:id', billsController.fetch);
 
 router.post('/', billsController.create);
 

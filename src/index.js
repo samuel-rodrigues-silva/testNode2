@@ -5,7 +5,7 @@ const router = require('./routes/billsRouter.js')
 app.use(express.json());
 app.use('/api/v1/bills', router);
 app.listen(8080 || PORT, () => {
-    console.log(`RUNNING ON PORT ${PORT}`)
+    console.log(`RUNNING ON PORT ${8080}`)
 })
 
 module.exports = app
